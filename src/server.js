@@ -1,6 +1,8 @@
 const express = require("express");
 const exhandlebars = require("express-handlebars");
 const path = require("path");
+const morgan = require("morgan");
+
 // Initialization
 const app = express();
 
@@ -20,6 +22,7 @@ app.engine(
 app.set("view engine", ".hbs");
 
 // Middlewares
+app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false })); //Everytime data arrives, stays in a json file
 
 // Global Variables
