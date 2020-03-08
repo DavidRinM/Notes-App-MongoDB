@@ -24,6 +24,6 @@ router.get("/notes/edit/:id", renderEditForm);
 router.put("/notes/edit/:id", updateNote); //update
 
 //Delete Note
-router.delete("notes/delete/:id", deleteNote);
+router.delete("/notes/delete/:id", deleteNote);
 
 module.exports = router;

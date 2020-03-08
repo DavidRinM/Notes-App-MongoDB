@@ -2,6 +2,7 @@ const express = require("express");
 const exhandlebars = require("express-handlebars");
 const path = require("path");
 const morgan = require("morgan");
+const methodOverride = require("method-override");
 
 // Initialization
 const app = express();
@@ -24,6 +25,8 @@ app.set("view engine", ".hbs");
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false })); //Everytime data arrives, stays in a json file
+
+app.use(methodOverride("_method"));
 
 // Global Variables
 
